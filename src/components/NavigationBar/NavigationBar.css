@@ -1,4 +1,7 @@
-
+body {
+    -ms-user-select: none;
+    user-select: none;
+  }
 
 .navigation-bar {
     display: flex;
@@ -14,9 +17,62 @@
     font-size: 24px;
 }
 
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.5s ease;
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.5s ease, transform-origin 0s;
+    cursor: pointer;
+    transform-origin: center;
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+  }
+  
+  .mobile-open .bar:nth-child(1) {
+    transform:  translateY(7px) translateX(-7px) rotate(90deg);
+  }
+  
+  .mobile-open .bar:nth-child(2) {
+    transform: translateY(0px) translateX(0px) rotate(90deg);
+  }
+  
+  .mobile-open .bar:nth-child(3) {
+    transform: translateY(-7px) translateX(7px) rotate(90deg);
+  }
+
+
+  
+
 .options {
     display: flex;
     list-style: none;
+    transition: opacity 0.3s ease-in-out;
+    
 }
 
 .option {
@@ -107,7 +163,7 @@
         margin: 2px 0;
     }
 
-    .options {
+    /* .options {
         display: none;
         width: 100%;
         text-align: center;
@@ -119,7 +175,29 @@
     .options.mobile-open {
         display: flex;
         flex-direction: column;
-    }
+    } */
+
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        padding: 0px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+      }
+      
+      .mobile-open .options {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0s;
+      }
   
 }
 

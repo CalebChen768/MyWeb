@@ -31,12 +31,20 @@ const NavigationBar = () => {
     // 切换移动端菜单的处理函数
     const handleMobileMenuToggle = () => {
         setMobileMenuOpen(!isMobileMenuOpen);
-    };
-
+        const bars = document.querySelectorAll('.bar');
+        bars.forEach((bar, index) => {
+          if (isMobileMenuOpen) {
+            bar.style.animation = `barClose 0.5s ease forwards ${index * 0.1}s`;
+          } else {
+            bar.style.animation = `barOpen 0.5s ease forwards ${index * 0.1}s`;
+          }
+        });
+      };
     return (
         <nav className={`navigation-bar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="logo">Logo</div>
-            <div className="menu-icon" onClick={handleMobileMenuToggle}>
+            
+            <div className={`menu-icon  `} onClick={handleMobileMenuToggle}>
                 <div className="bar"></div>
                 <div className="bar"></div>
                 <div className="bar"></div>
