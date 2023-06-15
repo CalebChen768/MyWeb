@@ -40,9 +40,10 @@ const NavigationBar = () => {
           }
         });
       };
+      
     return (
         <nav className={`navigation-bar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="logo">Logo</div>
+            <div className="logo">Caleb</div>
             
             <div className={`menu-icon  `} onClick={handleMobileMenuToggle}>
                 <div className="bar"></div>
@@ -55,7 +56,7 @@ const NavigationBar = () => {
                 
                 {options.map((option) => (
                     <li key={option.name} className={`option ${activeOption === option.name ? 'active' : ''}`}>
-                        <NavLink exact to={option.path} onClick={() => handleOptionClick(option.name)} >
+                        <NavLink  exact to={option.path} onClick={() => handleOptionClick(option.name)} >
                             {option.name}
                         </NavLink>
                     </li>
