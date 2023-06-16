@@ -1,21 +1,25 @@
 import React from 'react';
-import ToolBar from './components/NavigationBar/NavigationBar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-
-
+import NavigationBar from './components/NavigationBar/NavigationBar';
+import './components/NavigationBar/NavigationBar.css';
+import RandomNumber from "./pages/RandomNumber/RandomNumber";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import HomePage from "./pages/HomePage/HomePage";
+import './index.css'
 const App = () => {
-    return (
-        <Router>
-            <ToolBar />
-            <div>
-                <h1>你好，欢迎来到</h1>
-            </div>
-        </Router>
+  return (
+    <Router>
+ 
+      <NavigationBar />
+      <div class="maincontent">
+        <Routes>
+            <Route exact path="/RandomNumber" element={<RandomNumber />} />
+            <Route exact path="/HomePage" element={<HomePage />} />
+        </Routes>
+      </div>
 
-
-
-    );
+     
+    </Router>
+  );
 };
 
 export default App;

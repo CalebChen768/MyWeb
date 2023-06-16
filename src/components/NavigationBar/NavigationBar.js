@@ -11,7 +11,7 @@ const NavigationBar = () => {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Contact', path: '/contact' },
-        { name: 'More', path: '/contact' },
+        { name: 'More', path: '/noo' },
     ];
 
     // 当前选中的选项
@@ -21,12 +21,16 @@ const NavigationBar = () => {
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // 点击选项时的处理函数
+
     const handleOptionClick = (option) => {
         setActiveOption(option);
         if (isMobileMenuOpen) {
             setMobileMenuOpen(false);
         }
     };
+
+
+  
 
     // 切换移动端菜单的处理函数
     const handleMobileMenuToggle = () => {
@@ -43,7 +47,7 @@ const NavigationBar = () => {
       
     return (
         <nav className={`navigation-bar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-            <div className="logo">Caleb</div>
+            <div className="navbar-brand">Caleb</div>
             
             <div className={`menu-icon  `} onClick={handleMobileMenuToggle}>
                 <div className="bar"></div>
