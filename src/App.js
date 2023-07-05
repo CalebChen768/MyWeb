@@ -8,16 +8,12 @@ import './index.css'
 const App = () => {
   return (
     <Router>
- 
-      <NavigationBar />
-      <div class="maincontent">
+      <div>
         <Routes>
             <Route exact path="/RandomNumber" element={<RandomNumber />} />
             <Route exact path="/HomePage" element={<HomePage />} />
         </Routes>
       </div>
-
-     
     </Router>
   );
 };

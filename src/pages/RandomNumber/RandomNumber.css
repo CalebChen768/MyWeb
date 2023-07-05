@@ -1,115 +1,94 @@
 /* RandomNumber.css */
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
 .random-number {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .navigation-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .navigation-bar .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navigation-bar .options {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navigation-bar .options li {
-    margin-left: 1rem;
+  display: flex;
+  /* top: 90px; */
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.random-number-generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.random-number-generator label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding:30px
+}
+
+.random-number-generator input[type="number"] {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  width:70px;
+}
+
+.random-number-generator button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.random-number-generator button:hover {
+  background-color: #555;
+}
+
+.random-number-generator .result {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: #f5f5f5;
   }
   
   .random-number-generator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
+    background-color: #f5f5f5;
+    box-shadow: none;
+    margin: 0;
+    padding: 2rem;
   }
   
-  .random-number-generator h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .content {
+    margin-top: 2rem;
   }
-  
-  .random-number-generator .input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .random-number-generator .input-group label {
-    margin-right: 0.5rem;
-  }
-  
-  .random-number-generator input[type='number'] {
-    width: 5rem;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ccc;
-  }
-  
-  .random-number-generator button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .random-number-generator button:hover {
-    background-color: #444;
-  }
-  
-  .random-number-generator .result {
-    font-size: 2rem;
-    margin-top: 1rem;
-  }
+}
 
-
-  /* 应用于所有设备 */
-.navigation-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    background-color: #333;
-    color: #fff;
+@media (min-width: 601px) {
+  body {
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #f5f5f5 50%, transparent 50%);
+    background-size: 100% 4rem;
+    background-repeat: no-repeat;
   }
   
-  /* 应用于屏幕宽度小于600像素的设备 */
-  @media (max-width: 600px) {
-    .navigation-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
-    }
-  
-    .menu-icon {
-      margin-left: auto;
-    }
-  
-    .options {
-      display: none;
-      flex-direction: column;
-      margin-top: 1rem;
-    }
-  
-    .options.mobile-open {
-      display: flex;
-    }
+  .random-number-generator {
+    margin: 2rem auto;
+    max-width: 40rem;
   }
+  
+  .content {
+    margin-top: 4rem;
+  }
+}
